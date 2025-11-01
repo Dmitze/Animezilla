@@ -1,36 +1,42 @@
+```json
 {
   "design_system": {
     "metadata": {
       "name": "AnimeON Design System",
       "version": "1.0",
       "description": "Comprehensive design system profile for anime streaming platform with dark theme",
-      "primary_theme": "dark"
+      "primary_theme": "dark",
+      "last_updated": "2025"
     },
     
     "color_palette": {
       "primary": {
         "cyan_accent": {
           "hex": "#00D9C0",
+          "rgb": "rgb(0, 217, 192)",
           "usage": [
             "Active tab indicators",
             "Active navigation underlines",
             "Link hover states",
             "Rating badges background",
             "Icon accent colors",
-            "Primary interactive elements"
+            "Primary interactive elements",
+            "Active navigation buttons"
           ],
           "contexts": {
             "tabs": "Bottom border of active tab (2-3px solid)",
             "links": "Text color for active/hover links",
             "badges": "Background for rating badges (#1-#9 ranks)",
-            "buttons": "Arrow navigation buttons on hover"
+            "buttons": "Arrow navigation buttons on hover",
+            "navigation": "Active dropdown trigger background"
           }
         },
         "cyan_secondary": {
           "hex": "#1DB9A8",
           "usage": [
             "Secondary accent elements",
-            "Darker cyan variations for depth"
+            "Darker cyan variations for depth",
+            "Button hover states"
           ]
         }
       },
@@ -46,7 +52,10 @@
             "Anime card containers",
             "Content cards",
             "Comment cards",
-            "Modal backgrounds"
+            "Modal backgrounds",
+            "Navigation buttons",
+            "Dropdown backgrounds",
+            "User menu background"
           ],
           "note": "Semi-transparent variations may use rgba(26, 26, 26, 0.8-0.95)"
         },
@@ -63,8 +72,16 @@
           "usage": [
             "Hover states for cards",
             "Elevated UI elements",
-            "Dropdown menus"
+            "Dropdown menus",
+            "Info grid sections",
+            "Navigation hover states",
+            "Menu item hover backgrounds"
           ]
+        },
+        "overlay_background": {
+          "rgba": "rgba(0, 0, 0, 0.85)",
+          "usage": "Modal overlay backgrounds",
+          "backdrop_filter": "blur(8px)"
         }
       },
       
@@ -75,7 +92,9 @@
             "Main headings (h1, h2)",
             "Primary content text",
             "Card titles",
-            "Section headers"
+            "Section headers",
+            "Navigation active text",
+            "Username display"
           ],
           "font_weight": "600-700"
         },
@@ -86,7 +105,10 @@
             "Episode counts",
             "Metadata labels",
             "Category tags",
-            "Timestamps"
+            "Timestamps",
+            "Description text",
+            "Menu item default text",
+            "Navigation inactive text"
           ],
           "font_weight": "400-500"
         },
@@ -96,7 +118,10 @@
             "Tertiary information",
             "Placeholder text",
             "Disabled states",
-            "Footer text"
+            "Footer text",
+            "Info grid labels",
+            "Icon colors (default state)",
+            "Chevron icons"
           ],
           "font_weight": "400"
         }
@@ -108,7 +133,10 @@
           "usage": [
             "Card borders",
             "Section dividers",
-            "Input field borders"
+            "Input field borders",
+            "Navigation button borders",
+            "Dropdown borders",
+            "Menu dividers"
           ],
           "width": "1px"
         },
@@ -116,9 +144,20 @@
           "hex": "#3A3A3A",
           "usage": [
             "Active element borders",
-            "Focused input borders"
+            "Focused input borders",
+            "Secondary button borders",
+            "Navigation hover borders"
           ],
           "width": "1-2px"
+        },
+        "accent_border": {
+          "hex": "#00D9C0",
+          "usage": [
+            "Active navigation elements",
+            "Focused inputs",
+            "Genre tag borders"
+          ],
+          "opacity_variation": "rgba(0, 217, 192, 0.3)"
         }
       },
       
@@ -127,7 +166,7 @@
           "background": "#00D9C0",
           "text": "#0A0A0A",
           "hover_background": "#1DB9A8",
-          "usage": "Primary action buttons"
+          "usage": "Primary action buttons, add to list button"
         },
         "button_secondary": {
           "background": "#2A2A2A",
@@ -140,7 +179,25 @@
           "default": "#808080",
           "hover": "#00D9C0",
           "active": "#00D9C0",
-          "usage": "Like/dislike icons, action icons"
+          "usage": "Like/dislike icons, action icons, navigation icons"
+        },
+        "dropdown_item_hover": {
+          "background": "#242424",
+          "text": "#FFFFFF"
+        },
+        "tag_default": {
+          "background": "transparent",
+          "text": "#00D9C0",
+          "border": "1px solid rgba(0, 217, 192, 0.3)"
+        },
+        "tag_hover": {
+          "background": "rgba(0, 217, 192, 0.1)",
+          "border": "1px solid #00D9C0"
+        },
+        "navigation_active": {
+          "background": "#00D9C0",
+          "text": "#0A0A0A",
+          "border": "#00D9C0"
         }
       },
       
@@ -163,6 +220,16 @@
           "icon": "#00D9C0",
           "usage": "View count badges with eye icon",
           "position": "Top-right of card images"
+        },
+        "notification_badge": {
+          "background": "#FF4444",
+          "text": "#FFFFFF",
+          "border": "2px solid #0A0A0A",
+          "usage": "Unread notification count"
+        },
+        "error_text": {
+          "hex": "#FF4444",
+          "usage": "Logout/delete actions, error messages"
         }
       }
     },
@@ -210,7 +277,7 @@
           "font_weight": "400",
           "line_height": "1.5",
           "color": "#B3B3B3",
-          "usage": "Secondary content, descriptions"
+          "usage": "Secondary content, descriptions, navigation text"
         },
         "caption": {
           "font_size": "12-13px",
@@ -245,11 +312,272 @@
         "section_gap": "48px",
         "content_padding": "24px",
         "card_padding": "0px",
-        "button_padding": "10px 20px"
+        "button_padding": "10px 20px",
+        "menu_item_padding": "12px 16px",
+        "dropdown_margin": "8px",
+        "icon_gap": "12px"
       }
     },
     
     "components": {
+      "header_navigation": {
+        "container": {
+          "background": "#0A0A0A",
+          "height": "64px",
+          "padding": "0 24px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "24px",
+          "border_bottom": "1px solid #1A1A1A",
+          "position": "fixed",
+          "width": "100%",
+          "z_index": "100"
+        },
+        "logo": {
+          "height": "40px",
+          "display": "flex",
+          "align_items": "center"
+        },
+        "nav_items": {
+          "display": "flex",
+          "gap": "8px",
+          "align_items": "center"
+        }
+      },
+
+      "dropdown_navigation": {
+        "trigger_button": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "8px",
+          "padding": "10px 16px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "10px",
+          "color": "#FFFFFF",
+          "font_size": "14px",
+          "font_weight": "500",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "trigger_hover": {
+          "background": "#242424",
+          "border_color": "#3A3A3A"
+        },
+        "trigger_active": {
+          "background": "#00D9C0",
+          "color": "#0A0A0A",
+          "border_color": "#00D9C0"
+        },
+        "icon": {
+          "size": "18px",
+          "color": "inherit"
+        },
+        "chevron": {
+          "size": "16px",
+          "color": "#808080",
+          "transition": "transform 0.2s ease",
+          "transform_open": "rotate(180deg)"
+        },
+        "dropdown_panel": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "12px",
+          "padding": "8px",
+          "margin_top": "8px",
+          "box_shadow": "0 8px 24px rgba(0, 0, 0, 0.5)",
+          "min_width": "220px",
+          "z_index": "1000"
+        },
+        "dropdown_item": {
+          "padding": "12px 16px",
+          "border_radius": "8px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "12px",
+          "color": "#B3B3B3",
+          "font_size": "14px",
+          "font_weight": "500",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "dropdown_item_hover": {
+          "background": "#242424",
+          "color": "#FFFFFF"
+        },
+        "dropdown_item_icon": {
+          "size": "18px",
+          "color": "#808080"
+        }
+      },
+
+      "search_header": {
+        "container": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "8px",
+          "padding": "10px 16px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "10px",
+          "max_width": "280px",
+          "transition": "all 0.2s ease"
+        },
+        "focus": {
+          "border_color": "#00D9C0",
+          "box_shadow": "0 0 0 3px rgba(0, 217, 192, 0.1)"
+        },
+        "icon": {
+          "size": "18px",
+          "color": "#808080"
+        },
+        "input": {
+          "background": "transparent",
+          "border": "none",
+          "color": "#FFFFFF",
+          "font_size": "14px",
+          "outline": "none",
+          "width": "100%",
+          "placeholder_color": "#808080"
+        }
+      },
+
+      "notification_button": {
+        "container": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "8px",
+          "width": "40px",
+          "height": "40px",
+          "display": "flex",
+          "align_items": "center",
+          "justify_content": "center",
+          "cursor": "pointer",
+          "position": "relative",
+          "transition": "all 0.2s ease"
+        },
+        "hover": {
+          "background": "#242424",
+          "border_color": "#3A3A3A"
+        },
+        "icon": {
+          "size": "20px",
+          "color": "#B3B3B3"
+        },
+        "badge": {
+          "background": "#FF4444",
+          "color": "#FFFFFF",
+          "font_size": "10px",
+          "font_weight": "700",
+          "min_width": "18px",
+          "height": "18px",
+          "border_radius": "9px",
+          "padding": "0 5px",
+          "position": "absolute",
+          "top": "-4px",
+          "right": "-4px",
+          "display": "flex",
+          "align_items": "center",
+          "justify_content": "center",
+          "border": "2px solid #0A0A0A"
+        }
+      },
+
+      "user_menu": {
+        "trigger": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "8px",
+          "padding": "6px 12px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "10px",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "trigger_hover": {
+          "background": "#242424",
+          "border_color": "#3A3A3A"
+        },
+        "username": {
+          "color": "#FFFFFF",
+          "font_size": "14px",
+          "font_weight": "600"
+        },
+        "dropdown": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "12px",
+          "padding": "8px",
+          "margin_top": "8px",
+          "box_shadow": "0 8px 24px rgba(0, 0, 0, 0.5)",
+          "min_width": "240px"
+        },
+        "menu_item": {
+          "padding": "12px 16px",
+          "border_radius": "8px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "12px",
+          "color": "#B3B3B3",
+          "font_size": "14px",
+          "font_weight": "500",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "menu_item_hover": {
+          "background": "#242424",
+          "color": "#FFFFFF"
+        },
+        "menu_item_icon": {
+          "size": "18px",
+          "color": "#808080"
+        },
+        "divider": {
+          "height": "1px",
+          "background": "#2A2A2A",
+          "margin": "8px 0"
+        },
+        "logout_item": {
+          "color": "#FF4444"
+        },
+        "logout_item_hover": {
+          "background": "rgba(255, 68, 68, 0.1)",
+          "color": "#FF4444"
+        }
+      },
+
+      "mega_menu": {
+        "container": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "12px",
+          "padding": "16px",
+          "margin_top": "8px",
+          "box_shadow": "0 8px 24px rgba(0, 0, 0, 0.5)",
+          "display": "grid",
+          "grid_template_columns": "repeat(2, 1fr)",
+          "gap": "8px",
+          "min_width": "320px"
+        },
+        "item": {
+          "padding": "10px 14px",
+          "border_radius": "8px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "10px",
+          "color": "#B3B3B3",
+          "font_size": "14px",
+          "font_weight": "500",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "item_hover": {
+          "background": "#242424",
+          "color": "#FFFFFF"
+        }
+      },
+      
       "navigation_tabs": {
         "default_state": {
           "background": "transparent",
@@ -536,33 +864,242 @@
         },
         "position": "Absolute, left/right edges of carousel"
       },
-      
-      "search_input": {
+
+      "modal_detail_view": {
+        "overlay": {
+          "background": "rgba(0, 0, 0, 0.85)",
+          "backdrop_filter": "blur(8px)",
+          "z_index": "1000"
+        },
+        "container": {
+          "background": "#1A1A1A",
+          "border_radius": "16px",
+          "max_width": "800px",
+          "padding": "0px",
+          "box_shadow": "0 8px 32px rgba(0, 0, 0, 0.6)"
+        },
+        "header": {
+          "display": "flex",
+          "gap": "24px",
+          "padding": "24px",
+          "align_items": "flex-start"
+        },
+        "poster_image": {
+          "width": "180px",
+          "aspect_ratio": "2:3",
+          "border_radius": "12px",
+          "flex_shrink": "0",
+          "box_shadow": "0 4px 16px rgba(0, 0, 0, 0.4)"
+        },
+        "content_area": {
+          "flex": "1",
+          "padding": "0px"
+        },
+        "title": {
+          "font_size": "24px",
+          "font_weight": "700",
+          "color": "#FFFFFF",
+          "line_height": "1.3",
+          "margin_bottom": "16px"
+        }
+      },
+
+      "info_grid": {
+        "container": {
+          "display": "grid",
+          "grid_template_columns": "repeat(auto-fit, minmax(140px, 1 fr))",
+          ```json
+fr))",
+          "gap": "16px",
+          "margin_bottom": "20px",
+          "background": "#242424",
+          "padding": "16px",
+          "border_radius": "8px"
+        },
+        "info_item": {
+          "display": "flex",
+          "flex_direction": "column",
+          "gap": "4px"
+        },
+        "label": {
+          "font_size": "12px",
+          "color": "#808080",
+          "font_weight": "500",
+          "text_transform": "none"
+        },
+        "value": {
+          "font_size": "14px",
+          "color": "#FFFFFF",
+          "font_weight": "600"
+        },
+        "context": "Status, Release date, Episodes grid at top of modal"
+      },
+
+      "description_block": {
+        "container": {
+          "margin_bottom": "20px",
+          "padding": "20px 24px"
+        },
+        "text": {
+          "font_size": "15px",
+          "color": "#B3B3B3",
+          "line_height": "1.6",
+          "margin_bottom": "0px"
+        }
+      },
+
+      "genre_tags": {
+        "container": {
+          "display": "flex",
+          "flex_wrap": "wrap",
+          "gap": "8px",
+          "margin_bottom": "20px",
+          "padding": "0 24px"
+        },
+        "tag": {
+          "background": "transparent",
+          "color": "#00D9C0",
+          "border": "1px solid rgba(0, 217, 192, 0.3)",
+          "border_radius": "6px",
+          "padding": "6px 14px",
+          "font_size": "13px",
+          "font_weight": "500",
+          "transition": "all 0.2s ease",
+          "cursor": "pointer"
+        },
+        "tag_hover": {
+          "background": "rgba(0, 217, 192, 0.1)",
+          "border_color": "#00D9C0"
+        },
+        "examples": ["Романтика", "Про дорослих", "Комедія", "Про їжу"]
+      },
+
+      "add_to_list_button": {
+        "container": {
+          "width": "100%",
+          "padding": "0 24px 24px 24px"
+        },
+        "default": {
+          "background": "#00D9C0",
+          "color": "#0A0A0A",
+          "border": "none",
+          "border_radius": "10px",
+          "padding": "14px 20px",
+          "font_size": "15px",
+          "font_weight": "600",
+          "width": "100%",
+          "display": "flex",
+          "align_items": "center",
+          "justify_content": "space-between",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "hover": {
+          "background": "#1DB9A8",
+          "transform": "translateY(-1px)",
+          "box_shadow": "0 4px 12px rgba(0, 217, 192, 0.3)"
+        },
+        "icon_left": {
+          "size": "20px",
+          "color": "#0A0A0A"
+        },
+        "icon_right": {
+          "size": "18px",
+          "color": "#0A0A0A",
+          "transform": "rotate(0deg)",
+          "transition": "transform 0.2s ease"
+        },
+        "expanded": {
+          "icon_right_transform": "rotate(180deg)"
+        },
+        "text": "Додати до"
+      },
+
+      "dropdown_menu": {
         "container": {
           "background": "#1A1A1A",
           "border": "1px solid #2A2A2A",
           "border_radius": "8px",
-          "padding": "10px 16px",
+          "margin_top": "8px",
+          "padding": "8px 0",
+          "box_shadow": "0 4px 16px rgba(0, 0, 0, 0.4)",
+          "overflow": "hidden"
+        },
+        "item": {
+          "padding": "12px 24px",
+          "font_size": "14px",
+          "color": "#B3B3B3",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease",
           "display": "flex",
           "align_items": "center",
-          "gap": "8px",
-          "transition": "border-color 0.2s ease"
+          "gap": "12px"
         },
-        "input": {
-          "background": "transparent",
-          "border": "none",
-          "color": "#FFFFFF",
-          "font_size": "14px",
-          "outline": "none",
-          "placeholder_color": "#808080"
+        "item_hover": {
+          "background": "#242424",
+          "color": "#FFFFFF"
+        },
+        "item_icon": {
+          "size": "18px",
+          "color": "#808080"
+        },
+        "examples": ["Дивлюсь", "Заплановано"]
+      },
+
+      "language_toggle": {
+        "container": {
+          "display": "flex",
+          "gap": "8px",
+          "position": "absolute",
+          "top": "24px",
+          "right": "24px"
+        },
+        "button": {
+          "background": "#242424",
+          "color": "#B3B3B3",
+          "border": "1px solid #3A3A3A",
+          "border_radius": "6px",
+          "padding": "6px 12px",
+          "font_size": "13px",
+          "font_weight": "600",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "button_active": {
+          "background": "#00D9C0",
+          "color": "#0A0A0A",
+          "border_color": "#00D9C0"
+        },
+        "button_hover": {
+          "background": "#2A2A2A",
+          "color": "#FFFFFF"
+        },
+        "examples": ["UA (Дубляж)", "озвучка", "субтитри", "оригінал (японською)"]
+      },
+
+      "view_count_badge_modal": {
+        "container": {
+          "display": "flex",
+          "align_items": "center",
+          "gap": "6px",
+          "position": "absolute",
+          "top": "12px",
+          "right": "12px",
+          "background": "rgba(26, 26, 26, 0.9)",
+          "backdrop_filter": "blur(10px)",
+          "padding": "6px 10px",
+          "border_radius": "6px"
         },
         "icon": {
-          "color": "#808080",
-          "size": "18px"
+          "size": "16px",
+          "color": "#FFFFFF"
         },
-        "focus": {
-          "border_color": "#00D9C0"
-        }
+        "text": {
+          "font_size": "13px",
+          "font_weight": "600",
+          "color": "#FFFFFF"
+        },
+        "context": "Displays view count on poster image (e.g., '125')"
       }
     },
     
@@ -576,6 +1113,26 @@
         "elevated_shadow": {
           "value": "0 4px 16px rgba(0, 0, 0, 0.4)",
           "usage": "Modal overlays, dropdowns"
+        },
+        "dropdown_shadow": {
+          "value": "0 8px 24px rgba(0, 0, 0, 0.5)",
+          "usage": "All dropdown menus, mega menus, user menu"
+        },
+        "modal_shadow": {
+          "value": "0 8px 32px rgba(0, 0, 0, 0.6)",
+          "usage": "Main modal container"
+        },
+        "poster_shadow": {
+          "value": "0 4px 16px rgba(0, 0, 0, 0.4)",
+          "usage": "Poster image in modal"
+        },
+        "button_hover_shadow": {
+          "value": "0 4px 12px rgba(0, 217, 192, 0.3)",
+          "usage": "Add to list button on hover"
+        },
+        "focus_ring": {
+          "value": "0 0 0 3px rgba(0, 217, 192, 0.1)",
+          "usage": "Search input and form elements on focus"
         }
       },
       
@@ -599,11 +1156,15 @@
         },
         "medium": {
           "value": "8px",
-          "usage": "Cards, buttons, inputs, anime thumbnails"
+          "usage": "Cards, buttons, inputs, anime thumbnails, navigation buttons"
         },
         "large": {
           "value": "12px",
-          "usage": "Large containers, comment cards, horizontal scroll cards"
+          "usage": "Large containers, comment cards, horizontal scroll cards, dropdown panels"
+        },
+        "xlarge": {
+          "value": "16px",
+          "usage": "Modal containers"
         },
         "circle": {
           "value": "50%",
@@ -621,12 +1182,24 @@
       "backdrop_effects": {
         "blur": {
           "value": "blur(10px)",
-          "usage": "Navigation arrows, overlay elements"
+          "usage": "Navigation arrows, overlay elements, badge backgrounds"
+        },
+        "modal_overlay": {
+          "value": "rgba(0, 0, 0, 0.85) + blur(8px)",
+          "usage": "Background overlay when modal is open"
         }
       }
     },
     
     "layout": {
+      "header": {
+        "height": "64px",
+        "z_index": "100",
+        "position": "fixed",
+        "background": "#0A0A0A",
+        "border_bottom": "1px solid #1A1A1A"
+      },
+      
       "grid_system": {
         "anime_carousel": {
           "columns": "auto-fit",
@@ -652,6 +1225,13 @@
         "sidebar_width": "320px",
         "card_min_width": "160px",
         "card_max_width": "200px"
+      },
+      
+      "dropdown_positioning": {
+        "margin_top": "8px",
+        "min_width": "220px",
+        "max_width": "400px",
+        "z_index": "1000"
       }
     },
     
@@ -668,23 +1248,61 @@
       "fade_in": {
         "opacity": "0 to 1",
         "duration": "0.2s"
+      },
+      "dropdown_expand": {
+        "chevron_rotation": "rotate(0deg) to rotate(180deg)",
+        "duration": "0.2s",
+        "timing": "ease"
+      },
+      "dropdown_reveal": {
+        "opacity": "0 to 1",
+        "transform": "translateY(-8px) to translateY(0)",
+        "duration": "0.2s",
+        "timing": "ease-out"
+      },
+      "modal_appear": {
+        "opacity": "0 to 1",
+        "scale": "0.95 to 1",
+        "duration": "0.3s",
+        "timing": "ease-out"
+      },
+      "menu_item_hover": {
+        "background": "transparent to #242424",
+        "color": "#B3B3B3 to #FFFFFF",
+        "duration": "0.2s",
+        "timing": "ease"
       }
     },
     
     "usage_rules": {
       "DO": [
-        "Use #00D9C0 cyan for all interactive accent elements (tabs, links, badges)",
+        "Use #00D9C0 cyan for all interactive accent elements (tabs, links, badges, active navigation)",
         "Apply card shadows only on hover state",
-        "Use #1A1A1A for all card container backgrounds",
-        "Apply border-radius: 8px to all anime card images",
+        "Use #1A1A1A for all card container backgrounds and navigation elements",
+        "Apply border-radius: 8px to all anime card images and navigation buttons",
+        "Apply border-radius: 12px to dropdown panels",
+        "Apply border-radius: 16px to modal containers",
         "Use gradient only for user avatars (linear-gradient(135deg, #9333EA 0%, #EC4899 100%))",
         "Position rating badges at top-left of card images",
         "Position episode badges at bottom-right of card images",
-        "Use #FFFFFF for primary text (headings, titles)",
-        "Use #B3B3B3 for secondary text (metadata, labels)",
-        "Use #808080 for muted/tertiary text",
+        "Use #FFFFFF for primary text (headings, titles, active navigation)",
+        "Use #B3B3B3 for secondary text (metadata, labels, inactive navigation)",
+        "Use #808080 for muted/tertiary text and default icons",
         "Apply transitions to all interactive elements",
-        "Use rgba(0, 217, 192, 0.15) for translucent cyan backgrounds"
+        "Use rgba(0, 217, 192, 0.15) for translucent cyan backgrounds",
+        "Use #242424 background for info grid sections and hover states",
+        "Apply backdrop-filter blur to modal overlays and badge backgrounds",
+        "Use cyan borders for genre tags (rgba(0, 217, 192, 0.3))",
+        "Position language toggles at top-right of modal header",
+        "Apply box-shadow to poster images in modals",
+        "Use flex layout with space-between for button with icons",
+        "Apply smooth rotation transition (0.2s) to dropdown chevron icons",
+        "Add 8px margin-top to dropdown panels below triggers",
+        "Add notification badge with #FF4444 background when there are unread items",
+        "Position notification badge at top-right (-4px, -4px) with 2px border",
+        "Use gap of 12px between icon and text in menu items",
+        "Apply box-shadow (0 8px 24px rgba(0,0,0,0.5)) to all dropdown menus",
+        "Use #2A2A2A for borders on navigation elements and dividers"
       ],
       
       "DO_NOT": [
@@ -693,16 +1311,32 @@
         "DO NOT apply avatar gradient to badges",
         "DO NOT apply card shadows to non-hover states",
         "DO NOT use gradients on text elements",
-        "DO NOT apply cyan color to non-interactive text",
+        "DO NOT apply cyan color to non-interactive text or body paragraphs",
         "DO NOT use colors outside the defined palette",
-        "DO NOT apply border-radius greater than 12px to containers",
+        "DO NOT apply border-radius greater than 16px to any containers",
         "DO NOT mix gradient styles between components",
         "DO NOT apply image overlay gradient to non-image elements",
         "DO NOT use box-shadows on flat UI elements (tabs, text)",
         "DO NOT apply hover effects to static content",
         "DO NOT use #00D9C0 for body text or paragraphs",
         "DO NOT apply episode badge styling to rating badges",
-        "DO NOT position badges inconsistently across cards"
+        "DO NOT position badges inconsistently across cards",
+        "DO NOT use solid backgrounds for genre tags - they must be transparent with border",
+        "DO NOT apply gradients to modal backgrounds",
+        "DO NOT use card hover shadows on modal elements",
+        "DO NOT make info grid items clickable unless they are interactive",
+        "DO NOT apply cyan color to non-interactive genre tags (only border)",
+        "DO NOT use button styles for language toggle - use distinct toggle styling",
+        "DO NOT forget backdrop-filter on overlay backgrounds",
+        "DO NOT use cyan background for inactive navigation items",
+        "DO NOT apply gradients to navigation buttons",
+        "DO NOT forget hover states on menu items",
+        "DO NOT use solid colors other than #FF4444 for notification badges",
+        "DO NOT apply card shadows to navigation dropdowns - use dropdown shadow",
+        "DO NOT make dropdown items full opacity when inactive",
+        "DO NOT use different padding for menu items - must be consistent (12px 16px)",
+        "DO NOT forget divider between regular items and logout in user menu",
+        "DO NOT apply different styling to hamburger menu vs other nav buttons"
       ],
       
       "context_specific_rules": {
@@ -711,7 +1345,17 @@
         "buttons": "Primary buttons use #00D9C0 background. Secondary buttons use transparent background with #3A3A3A border. No gradients.",
         "text_hierarchy": "White (#FFFFFF) for headings, #B3B3B3 for descriptions, #808080 for metadata. Cyan (#00D9C0) ONLY for links and active states.",
         "avatars": "Only avatars use the purple-to-pink gradient. This gradient is NEVER used elsewhere.",
-        "navigation": "Active tabs have cyan (#00D9C0) text and bottom border. Inactive tabs are #B3B3B3 with no border."
+        "navigation": "Active tabs have cyan (#00D9C0) text and bottom border. Inactive tabs are #B3B3B3 with no border.",
+        "modal_structure": "Modal has dark overlay (rgba(0,0,0,0.85) with blur), container is #1A1A1A with 16px radius. Poster on left (180px wide), content on right.",
+        "genre_tags": "Genre tags are transparent with cyan border and text. On hover, add subtle cyan background (rgba(0,217,192,0.1)). Never use solid backgrounds.",
+        "info_grid": "Status, release date, episodes display in grid with #242424 background, 8px radius. Labels are #808080, values are white.",
+        "add_button": "Main action button is full-width, cyan (#00D9C0) background, dark text. Has plus icon on left, chevron on right. Chevron rotates 180deg when dropdown opens.",
+        "language_toggles": "Small pills at top-right. Inactive: #242424 background, active: cyan background. Use for audio/subtitle options.",
+        "navigation_dropdowns": "All dropdown triggers use #1A1A1A background with #2A2A2A border. Hover changes to #242424. Active state uses cyan (#00D9C0) background with dark text. Dropdown panels have 12px radius and 0 8px 24px shadow.",
+        "user_menu": "Username displays in white. Dropdown has regular menu items at top, divider line (#2A2A2A), then logout at bottom in red (#FF4444). Logout hover has rgba(255,68,68,0.1) background.",
+        "notification_button": "40x40px button with bell icon. Red badge (#FF4444) at top-right shows count. Badge has 2px solid border matching page background (#0A0A0A).",
+        "search_input": "On focus, border changes to cyan (#00D9C0) and adds focus ring shadow. Icon stays #808080, doesn't change color.",
+        "mega_menu": "Two column grid layout with 8px gap. Items have 10px 14px padding (less than regular dropdown items). Used for catalog dropdown with multiple categories."
       }
     },
     
@@ -725,7 +1369,12 @@
       "focus_indicators": {
         "outline": "2px solid #00D9C0",
         "offset": "2px",
+        "box_shadow": "0 0 0 3px rgba(0, 217, 192, 0.1)",
         "usage": "All interactive elements"
+      },
+      "minimum_touch_targets": {
+        "size": "40x40px",
+        "applies_to": "All buttons, clickable icons, navigation elements"
       }
     },
     
@@ -739,7 +1388,26 @@
         "mobile": "Single column, 100% width",
         "tablet": "2-3 columns",
         "desktop": "4-6 columns based on container width"
+      },
+      "mobile_navigation": {
+        "breakpoint": "< 768px",
+        "changes": [
+          "Show hamburger menu instead of full navigation",
+          "Stack navigation items vertically in slide-out panel",
+          "Expand search to full width when active",
+          "Move user menu to hamburger menu"
+        ]
       }
+    },
+    
+    "component_examples": {
+      "navigation_menu_items": {
+        "catalog": ["Аніме", "Користувачі", "Анонси", "Топ 100 аніме"],
+        "user_menu": ["Профіль", "Сповіщення", "Списки аніме", "Історія переглядів", "Список друзів", "Налаштування", "Вихід"]
+      },
+      "genre_examples": ["Романтика", "Про дорослих", "Комедія", "Про їжу"],
+      "language_options": ["UA (Дубляж)", "озвучка", "субтитри", "оригінал (японською)"],
+      "list_status_options": ["Дивлюсь", "Заплановано", "Переглянуто", "Відкладено", "Кинуто"]
     }
   }
 }
