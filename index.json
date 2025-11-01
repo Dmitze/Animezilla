@@ -1,0 +1,745 @@
+{
+  "design_system": {
+    "metadata": {
+      "name": "AnimeON Design System",
+      "version": "1.0",
+      "description": "Comprehensive design system profile for anime streaming platform with dark theme",
+      "primary_theme": "dark"
+    },
+    
+    "color_palette": {
+      "primary": {
+        "cyan_accent": {
+          "hex": "#00D9C0",
+          "usage": [
+            "Active tab indicators",
+            "Active navigation underlines",
+            "Link hover states",
+            "Rating badges background",
+            "Icon accent colors",
+            "Primary interactive elements"
+          ],
+          "contexts": {
+            "tabs": "Bottom border of active tab (2-3px solid)",
+            "links": "Text color for active/hover links",
+            "badges": "Background for rating badges (#1-#9 ranks)",
+            "buttons": "Arrow navigation buttons on hover"
+          }
+        },
+        "cyan_secondary": {
+          "hex": "#1DB9A8",
+          "usage": [
+            "Secondary accent elements",
+            "Darker cyan variations for depth"
+          ]
+        }
+      },
+      
+      "backgrounds": {
+        "page_background": {
+          "hex": "#0A0A0A",
+          "usage": "Main page background, body element"
+        },
+        "card_background": {
+          "hex": "#1A1A1A",
+          "usage": [
+            "Anime card containers",
+            "Content cards",
+            "Comment cards",
+            "Modal backgrounds"
+          ],
+          "note": "Semi-transparent variations may use rgba(26, 26, 26, 0.8-0.95)"
+        },
+        "section_background": {
+          "hex": "#141414",
+          "usage": [
+            "Section containers",
+            "List item backgrounds",
+            "Sidebar backgrounds"
+          ]
+        },
+        "elevated_background": {
+          "hex": "#242424",
+          "usage": [
+            "Hover states for cards",
+            "Elevated UI elements",
+            "Dropdown menus"
+          ]
+        }
+      },
+      
+      "text": {
+        "primary_text": {
+          "hex": "#FFFFFF",
+          "usage": [
+            "Main headings (h1, h2)",
+            "Primary content text",
+            "Card titles",
+            "Section headers"
+          ],
+          "font_weight": "600-700"
+        },
+        "secondary_text": {
+          "hex": "#B3B3B3",
+          "usage": [
+            "Subtitles",
+            "Episode counts",
+            "Metadata labels",
+            "Category tags",
+            "Timestamps"
+          ],
+          "font_weight": "400-500"
+        },
+        "muted_text": {
+          "hex": "#808080",
+          "usage": [
+            "Tertiary information",
+            "Placeholder text",
+            "Disabled states",
+            "Footer text"
+          ],
+          "font_weight": "400"
+        }
+      },
+      
+      "borders": {
+        "subtle_border": {
+          "hex": "#2A2A2A",
+          "usage": [
+            "Card borders",
+            "Section dividers",
+            "Input field borders"
+          ],
+          "width": "1px"
+        },
+        "strong_border": {
+          "hex": "#3A3A3A",
+          "usage": [
+            "Active element borders",
+            "Focused input borders"
+          ],
+          "width": "1-2px"
+        }
+      },
+      
+      "interactive": {
+        "button_primary": {
+          "background": "#00D9C0",
+          "text": "#0A0A0A",
+          "hover_background": "#1DB9A8",
+          "usage": "Primary action buttons"
+        },
+        "button_secondary": {
+          "background": "#2A2A2A",
+          "text": "#FFFFFF",
+          "border": "#3A3A3A",
+          "hover_background": "#3A3A3A",
+          "usage": "Secondary action buttons, 'Додати коментар' buttons"
+        },
+        "icon_button": {
+          "default": "#808080",
+          "hover": "#00D9C0",
+          "active": "#00D9C0",
+          "usage": "Like/dislike icons, action icons"
+        }
+      },
+      
+      "status_colors": {
+        "rating_badge": {
+          "background": "#00D9C0",
+          "text": "#0A0A0A",
+          "usage": "Top-left corner rating badges (#1, #2, etc.)"
+        },
+        "episode_badge": {
+          "background": "rgba(0, 217, 192, 0.15)",
+          "text": "#00D9C0",
+          "border": "1px solid rgba(0, 217, 192, 0.3)",
+          "usage": "Episode count badges on cards",
+          "position": "Bottom-right of card images"
+        },
+        "views_badge": {
+          "background": "rgba(26, 26, 26, 0.85)",
+          "text": "#FFFFFF",
+          "icon": "#00D9C0",
+          "usage": "View count badges with eye icon",
+          "position": "Top-right of card images"
+        }
+      }
+    },
+    
+    "typography": {
+      "font_families": {
+        "primary": {
+          "name": "System UI Stack",
+          "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+          "usage": "All text content"
+        }
+      },
+      
+      "hierarchy": {
+        "h1": {
+          "font_size": "32-36px",
+          "font_weight": "700",
+          "line_height": "1.2",
+          "color": "#FFFFFF",
+          "usage": "Main page headings: 'Аніме осіннього сезону'"
+        },
+        "h2": {
+          "font_size": "24-28px",
+          "font_weight": "700",
+          "line_height": "1.3",
+          "color": "#FFFFFF",
+          "usage": "Section headings: 'Продовжити перегляд', 'Популярні аніме'"
+        },
+        "h3": {
+          "font_size": "16-18px",
+          "font_weight": "600",
+          "line_height": "1.4",
+          "color": "#FFFFFF",
+          "usage": "Card titles, anime names"
+        },
+        "body_large": {
+          "font_size": "15-16px",
+          "font_weight": "400",
+          "line_height": "1.5",
+          "color": "#FFFFFF",
+          "usage": "Main content, comments"
+        },
+        "body": {
+          "font_size": "14px",
+          "font_weight": "400",
+          "line_height": "1.5",
+          "color": "#B3B3B3",
+          "usage": "Secondary content, descriptions"
+        },
+        "caption": {
+          "font_size": "12-13px",
+          "font_weight": "400",
+          "line_height": "1.4",
+          "color": "#808080",
+          "usage": "Episode counts, timestamps, metadata"
+        },
+        "label": {
+          "font_size": "11-12px",
+          "font_weight": "500",
+          "line_height": "1.3",
+          "color": "#B3B3B3",
+          "usage": "Category labels: 'ТБ-серіал', 'Фільм', 'ONA'"
+        }
+      }
+    },
+    
+    "spacing": {
+      "scale": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "32px",
+        "2xl": "48px",
+        "3xl": "64px"
+      },
+      
+      "component_spacing": {
+        "card_gap": "16px",
+        "section_gap": "48px",
+        "content_padding": "24px",
+        "card_padding": "0px",
+        "button_padding": "10px 20px"
+      }
+    },
+    
+    "components": {
+      "navigation_tabs": {
+        "default_state": {
+          "background": "transparent",
+          "text_color": "#B3B3B3",
+          "border_bottom": "2px solid transparent",
+          "font_size": "15px",
+          "font_weight": "500",
+          "padding": "12px 20px"
+        },
+        "active_state": {
+          "background": "transparent",
+          "text_color": "#00D9C0",
+          "border_bottom": "2px solid #00D9C0",
+          "font_weight": "600"
+        },
+        "hover_state": {
+          "text_color": "#FFFFFF",
+          "transition": "color 0.2s ease"
+        },
+        "context": "Horizontal tab navigation: 'Субота (Сьогодні)', 'Неділя', 'Понеділок', etc."
+      },
+      
+      "anime_card": {
+        "container": {
+          "background": "transparent",
+          "border_radius": "8px",
+          "overflow": "hidden",
+          "transition": "transform 0.2s ease, box-shadow 0.2s ease"
+        },
+        "image_container": {
+          "aspect_ratio": "2:3",
+          "border_radius": "8px",
+          "overflow": "hidden",
+          "position": "relative"
+        },
+        "image": {
+          "width": "100%",
+          "height": "100%",
+          "object_fit": "cover",
+          "transition": "transform 0.3s ease"
+        },
+        "title": {
+          "font_size": "15-16px",
+          "font_weight": "600",
+          "color": "#FFFFFF",
+          "margin_top": "12px",
+          "line_height": "1.3",
+          "max_lines": "2",
+          "text_overflow": "ellipsis"
+        },
+        "hover_state": {
+          "image_transform": "scale(1.05)",
+          "container_shadow": "0 8px 24px rgba(0, 217, 192, 0.15)"
+        },
+        "badges": {
+          "rating": {
+            "position": "top-left: 8px",
+            "background": "#00D9C0",
+            "color": "#0A0A0A",
+            "font_size": "12px",
+            "font_weight": "700",
+            "padding": "4px 8px",
+            "border_radius": "4px"
+          },
+          "episode": {
+            "position": "bottom-right: 8px",
+            "background": "rgba(0, 217, 192, 0.15)",
+            "color": "#00D9C0",
+            "border": "1px solid rgba(0, 217, 192, 0.3)",
+            "font_size": "11px",
+            "font_weight": "600",
+            "padding": "4px 8px",
+            "border_radius": "4px"
+          },
+          "views": {
+            "position": "top-right: 8px",
+            "background": "rgba(26, 26, 26, 0.85)",
+            "color": "#FFFFFF",
+            "font_size": "11px",
+            "font_weight": "500",
+            "padding": "4px 8px",
+            "border_radius": "4px",
+            "icon_color": "#00D9C0",
+            "icon_size": "14px"
+          }
+        }
+      },
+      
+      "horizontal_scroll_card": {
+        "container": {
+          "background": "#1A1A1A",
+          "border_radius": "12px",
+          "padding": "0px",
+          "display": "flex",
+          "gap": "16px",
+          "overflow": "hidden"
+        },
+        "image": {
+          "width": "140-160px",
+          "aspect_ratio": "2:3",
+          "border_radius": "8px",
+          "flex_shrink": "0"
+        },
+        "content": {
+          "padding": "16px",
+          "flex": "1"
+        },
+        "title": {
+          "font_size": "16px",
+          "font_weight": "600",
+          "color": "#FFFFFF",
+          "margin_bottom": "8px"
+        },
+        "metadata": {
+          "font_size": "13px",
+          "color": "#808080",
+          "margin_bottom": "4px"
+        },
+        "context": "Used in 'Продовжити перегляд' section"
+      },
+      
+      "comment_card": {
+        "container": {
+          "background": "#1A1A1A",
+          "border_radius": "12px",
+          "padding": "16px",
+          "margin_bottom": "16px"
+        },
+        "avatar": {
+          "size": "40px",
+          "border_radius": "50%",
+          "background": "linear-gradient(135deg, #9333EA 0%, #EC4899 100%)",
+          "color": "#FFFFFF",
+          "font_size": "16px",
+          "font_weight": "600",
+          "display": "flex",
+          "align_items": "center",
+          "justify_content": "center"
+        },
+        "username": {
+          "font_size": "14px",
+          "font_weight": "600",
+          "color": "#FFFFFF",
+          "display": "inline"
+        },
+        "linked_anime": {
+          "color": "#00D9C0",
+          "text_decoration": "none",
+          "font_weight": "500",
+          "hover_color": "#1DB9A8"
+        },
+        "timestamp": {
+          "font_size": "12px",
+          "color": "#808080",
+          "margin_left": "8px"
+        },
+        "comment_text": {
+          "font_size": "14px",
+          "color": "#FFFFFF",
+          "line_height": "1.5",
+          "margin_top": "8px"
+        },
+        "actions": {
+          "display": "flex",
+          "gap": "16px",
+          "margin_top": "12px",
+          "align_items": "center"
+        },
+        "action_button": {
+          "display": "flex",
+          "align_items": "center",
+          "gap": "6px",
+          "color": "#808080",
+          "font_size": "13px",
+          "transition": "color 0.2s ease",
+          "hover_color": "#00D9C0"
+        },
+        "icon": {
+          "size": "18px",
+          "color": "#808080",
+          "hover_color": "#00D9C0"
+        }
+      },
+      
+      "update_card": {
+        "container": {
+          "display": "flex",
+          "gap": "12px",
+          "padding": "12px 0",
+          "border_bottom": "1px solid #2A2A2A"
+        },
+        "thumbnail": {
+          "width": "60px",
+          "aspect_ratio": "2:3",
+          "border_radius": "6px",
+          "flex_shrink": "0"
+        },
+        "content": {
+          "flex": "1"
+        },
+        "title": {
+          "font_size": "15px",
+          "font_weight": "600",
+          "color": "#FFFFFF",
+          "margin_bottom": "4px",
+          "line_height": "1.3"
+        },
+        "timestamp": {
+          "font_size": "12px",
+          "color": "#808080",
+          "margin_bottom": "4px"
+        },
+        "description": {
+          "font_size": "13px",
+          "color": "#B3B3B3",
+          "line_height": "1.4"
+        },
+        "context": "Used in 'Останні оновлення' sidebar section"
+      },
+      
+      "button_primary": {
+        "default": {
+          "background": "#00D9C0",
+          "color": "#0A0A0A",
+          "border": "none",
+          "border_radius": "8px",
+          "padding": "10px 20px",
+          "font_size": "14px",
+          "font_weight": "600",
+          "cursor": "pointer",
+          "transition": "background 0.2s ease, transform 0.1s ease"
+        },
+        "hover": {
+          "background": "#1DB9A8",
+          "transform": "translateY(-1px)"
+        },
+        "active": {
+          "transform": "translateY(0)"
+        },
+        "disabled": {
+          "background": "#2A2A2A",
+          "color": "#808080",
+          "cursor": "not-allowed"
+        }
+      },
+      
+      "button_secondary": {
+        "default": {
+          "background": "transparent",
+          "color": "#B3B3B3",
+          "border": "1px solid #3A3A3A",
+          "border_radius": "8px",
+          "padding": "10px 20px",
+          "font_size": "14px",
+          "font_weight": "500",
+          "cursor": "pointer",
+          "transition": "all 0.2s ease"
+        },
+        "hover": {
+          "background": "#2A2A2A",
+          "color": "#FFFFFF",
+          "border_color": "#00D9C0"
+        },
+        "active": {
+          "background": "#1A1A1A"
+        },
+        "context": "'Додати коментар' buttons"
+      },
+      
+      "navigation_arrow": {
+        "default": {
+          "background": "rgba(26, 26, 26, 0.8)",
+          "color": "#FFFFFF",
+          "size": "40px",
+          "border_radius": "50%",
+          "icon_size": "20px",
+          "backdrop_filter": "blur(10px)",
+          "transition": "all 0.2s ease"
+        },
+        "hover": {
+          "background": "rgba(0, 217, 192, 0.2)",
+          "color": "#00D9C0",
+          "transform": "scale(1.1)"
+        },
+        "position": "Absolute, left/right edges of carousel"
+      },
+      
+      "search_input": {
+        "container": {
+          "background": "#1A1A1A",
+          "border": "1px solid #2A2A2A",
+          "border_radius": "8px",
+          "padding": "10px 16px",
+          "display": "flex",
+          "align_items": "center",
+          "gap": "8px",
+          "transition": "border-color 0.2s ease"
+        },
+        "input": {
+          "background": "transparent",
+          "border": "none",
+          "color": "#FFFFFF",
+          "font_size": "14px",
+          "outline": "none",
+          "placeholder_color": "#808080"
+        },
+        "icon": {
+          "color": "#808080",
+          "size": "18px"
+        },
+        "focus": {
+          "border_color": "#00D9C0"
+        }
+      }
+    },
+    
+    "visual_effects": {
+      "shadows": {
+        "card_shadow": {
+          "default": "0 2px 8px rgba(0, 0, 0, 0.3)",
+          "hover": "0 8px 24px rgba(0, 217, 192, 0.15)",
+          "usage": "Applied to card containers on hover"
+        },
+        "elevated_shadow": {
+          "value": "0 4px 16px rgba(0, 0, 0, 0.4)",
+          "usage": "Modal overlays, dropdowns"
+        }
+      },
+      
+      "gradients": {
+        "avatar_gradient": {
+          "value": "linear-gradient(135deg, #9333EA 0%, #EC4899 100%)",
+          "usage": "User avatar backgrounds in comment section",
+          "note": "DO NOT apply to cards, buttons, or other elements"
+        },
+        "image_overlay": {
+          "value": "linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.6) 100%)",
+          "usage": "Bottom gradient on anime card images to improve text readability",
+          "position": "Bottom 30% of card image"
+        }
+      },
+      
+      "border_radius": {
+        "small": {
+          "value": "4px",
+          "usage": "Small badges, tags"
+        },
+        "medium": {
+          "value": "8px",
+          "usage": "Cards, buttons, inputs, anime thumbnails"
+        },
+        "large": {
+          "value": "12px",
+          "usage": "Large containers, comment cards, horizontal scroll cards"
+        },
+        "circle": {
+          "value": "50%",
+          "usage": "Avatars, circular navigation buttons"
+        }
+      },
+      
+      "transitions": {
+        "default": "all 0.2s ease",
+        "transform": "transform 0.3s ease",
+        "color": "color 0.2s ease",
+        "opacity": "opacity 0.2s ease"
+      },
+      
+      "backdrop_effects": {
+        "blur": {
+          "value": "blur(10px)",
+          "usage": "Navigation arrows, overlay elements"
+        }
+      }
+    },
+    
+    "layout": {
+      "grid_system": {
+        "anime_carousel": {
+          "columns": "auto-fit",
+          "min_column_width": "160px",
+          "max_column_width": "200px",
+          "gap": "16px",
+          "display": "horizontal scroll"
+        },
+        "anime_grid": {
+          "columns": "repeat(auto-fill, minmax(160px, 1fr))",
+          "gap": "16px",
+          "rows": "masonry"
+        },
+        "popular_anime_grid": {
+          "columns": "3",
+          "gap": "24px",
+          "responsive_breakpoint": "1024px"
+        }
+      },
+      
+      "container_widths": {
+        "max_content_width": "1400px",
+        "sidebar_width": "320px",
+        "card_min_width": "160px",
+        "card_max_width": "200px"
+      }
+    },
+    
+    "animation_patterns": {
+      "card_hover": {
+        "image_scale": "scale(1.05)",
+        "duration": "0.3s",
+        "timing": "ease-out"
+      },
+      "button_press": {
+        "transform": "translateY(0) to translateY(-1px)",
+        "duration": "0.1s"
+      },
+      "fade_in": {
+        "opacity": "0 to 1",
+        "duration": "0.2s"
+      }
+    },
+    
+    "usage_rules": {
+      "DO": [
+        "Use #00D9C0 cyan for all interactive accent elements (tabs, links, badges)",
+        "Apply card shadows only on hover state",
+        "Use #1A1A1A for all card container backgrounds",
+        "Apply border-radius: 8px to all anime card images",
+        "Use gradient only for user avatars (linear-gradient(135deg, #9333EA 0%, #EC4899 100%))",
+        "Position rating badges at top-left of card images",
+        "Position episode badges at bottom-right of card images",
+        "Use #FFFFFF for primary text (headings, titles)",
+        "Use #B3B3B3 for secondary text (metadata, labels)",
+        "Use #808080 for muted/tertiary text",
+        "Apply transitions to all interactive elements",
+        "Use rgba(0, 217, 192, 0.15) for translucent cyan backgrounds"
+      ],
+      
+      "DO_NOT": [
+        "DO NOT apply avatar gradient to card backgrounds",
+        "DO NOT apply avatar gradient to buttons",
+        "DO NOT apply avatar gradient to badges",
+        "DO NOT apply card shadows to non-hover states",
+        "DO NOT use gradients on text elements",
+        "DO NOT apply cyan color to non-interactive text",
+        "DO NOT use colors outside the defined palette",
+        "DO NOT apply border-radius greater than 12px to containers",
+        "DO NOT mix gradient styles between components",
+        "DO NOT apply image overlay gradient to non-image elements",
+        "DO NOT use box-shadows on flat UI elements (tabs, text)",
+        "DO NOT apply hover effects to static content",
+        "DO NOT use #00D9C0 for body text or paragraphs",
+        "DO NOT apply episode badge styling to rating badges",
+        "DO NOT position badges inconsistently across cards"
+      ],
+      
+      "context_specific_rules": {
+        "cards": "Anime cards use transparent background with #1A1A1A on hover. Images have 8px border-radius. Only apply shadow on hover.",
+        "badges": "Rating badges use solid #00D9C0 background. Episode badges use rgba(0, 217, 192, 0.15) with border. Never mix these styles.",
+        "buttons": "Primary buttons use #00D9C0 background. Secondary buttons use transparent background with #3A3A3A border. No gradients.",
+        "text_hierarchy": "White (#FFFFFF) for headings, #B3B3B3 for descriptions, #808080 for metadata. Cyan (#00D9C0) ONLY for links and active states.",
+        "avatars": "Only avatars use the purple-to-pink gradient. This gradient is NEVER used elsewhere.",
+        "navigation": "Active tabs have cyan (#00D9C0) text and bottom border. Inactive tabs are #B3B3B3 with no border."
+      }
+    },
+    
+    "accessibility": {
+      "contrast_ratios": {
+        "primary_text": "14:1 (#FFFFFF on #0A0A0A)",
+        "secondary_text": "7:1 (#B3B3B3 on #0A0A0A)",
+        "cyan_on_dark": "10:1 (#00D9C0 on #0A0A0A)",
+        "cyan_on_card": "9:1 (#00D9C0 on #1A1A1A)"
+      },
+      "focus_indicators": {
+        "outline": "2px solid #00D9C0",
+        "offset": "2px",
+        "usage": "All interactive elements"
+      }
+    },
+    
+    "responsive_behavior": {
+      "breakpoints": {
+        "mobile": "320px - 767px",
+        "tablet": "768px - 1023px",
+        "desktop": "1024px+"
+      },
+      "card_behavior": {
+        "mobile": "Single column, 100% width",
+        "tablet": "2-3 columns",
+        "desktop": "4-6 columns based on container width"
+      }
+    }
+  }
+}
