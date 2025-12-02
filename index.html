@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animezilla - Український аніме-хаб</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header-navigation">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="15" stroke="#00D9C0" stroke-width="2"/>
+                    <text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#00D9C0" font-weight="bold" font-size="16">Z</text>
+                </svg>
+                <span class="logo-text">Animezilla</span>
+            </div>
+
+            <!-- Navigation Items -->
+            <nav class="nav-items">
+                <div class="dropdown-navigation">
+                    <button class="trigger-button">
+                        <span>Каталог</span>
+                        <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M4 6l4 4 4-4" stroke="#808080" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-panel">
+                        <a href="#" class="dropdown-item">
+                            <span>Аніме</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Користувачі</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Анонси</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Топ 100 аніме</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Right side controls -->
+            <div class="header-right">
+                <!-- Search -->
+                <div class="search-header">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="7.5" cy="7.5" r="5.5" stroke="#808080" stroke-width="2"/>
+                        <path d="M13 13l3 3" stroke="#808080" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input type="text" placeholder="Пошук аніме..." class="search-input">
+                </div>
+
+                <!-- Notifications -->
+                <button class="notification-button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2C6.5 2 3.73 4.5 3.73 7.5C3.73 10 2 12 2 12H18C18 12 16.27 10 16.27 7.5C16.27 4.5 13.5 2 10 2Z" stroke="#B3B3B3" stroke-width="1.5"/>
+                        <path d="M12.5 16C12.5 17.1 11.6 18 10.5 18C9.4 18 8.5 17.1 8.5 16" stroke="#B3B3B3" stroke-width="1.5"/>
+                    </svg>
+                    <span class="notification-badge">3</span>
+                </button>
+
+                <!-- User Menu -->
+                <div class="dropdown-navigation user-menu-wrapper">
+                    <button class="trigger-button user-trigger">
+                        <div class="user-avatar">U</div>
+                        <span class="username">Користувач</span>
+                    </button>
+                    <div class="dropdown-panel user-menu">
+                        <a href="#" class="dropdown-item">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="9" cy="6" r="4" stroke="#808080" stroke-width="1.5"/>
+                                <path d="M2 16c0-3 3-5 7-5s7 2 7 5" stroke="#808080" stroke-width="1.5"/>
+                            </svg>
+                            <span>Профіль</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Сповіщення</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Списки аніме</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Історія переглядів</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span>Налаштування</span>
+                        </a>
+                        <div class="menu-divider"></div>
+                        <a href="#" class="dropdown-item logout-item">
+                            <span>Вихід</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Animezilla</h1>
+                <p class="hero-subtitle">Один духовний анімейт спільнота України</p>
+                <p class="hero-description">
+                    Від рецензій та новин до косплею, манги та фан-дискусій — 
+                    ми об'єднуємо шанувальників аніме в одній яскравій спільноті. 
+                    Відкривайте класику, досліджуйте нові випуски та ділитеся своєю пристрастю з фанатами по всій Україні та за кордоном.
+                </p>
+                <button class="button-primary">Розпочати перегляд</button>
+            </div>
+        </section>
+
+        <!-- Continue Watching Section -->
+        <section class="content-section">
+            <h2 class="section-title">Продовжити перегляд</h2>
+            <div class="anime-carousel">
+                <div class="anime-card">
+                    <div class="anime-card-image">
+                        <div class="anime-card-placeholder">Poster 1</div>
+                        <span class="rating-badge">1</span>
+                        <div class="views-badge">
+                            <svg width="16" height="16" fill="#00D9C0">
+                                <path d="M8 2C4.5 2 1.5 5 1.5 8s3 6 6.5 6 6.5-3 6.5-6-3-6-6.5-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                            </svg>
+                            <span>125</span>
+                        </div>
+                        <span class="episode-badge">24 ep</span>
+                    </div>
+                    <div class="anime-card-body">
+                        <h3 class="anime-title">Attack on Titan</h3>
+                        <p class="anime-meta">Романтика, Екшн</p>
+                    </div>
+                </div>
+
+                <div class="anime-card">
+                    <div class="anime-card-image">
+                        <div class="anime-card-placeholder">Poster 2</div>
+                        <span class="rating-badge">2</span>
+                        <div class="views-badge">
+                            <svg width="16" height="16" fill="#00D9C0">
+                                <path d="M8 2C4.5 2 1.5 5 1.5 8s3 6 6.5 6 6.5-3 6.5-6-3-6-6.5-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                            </svg>
+                            <span>98</span>
+                        </div>
+                        <span class="episode-badge">12 ep</span>
+                    </div>
+                    <div class="anime-card-body">
+                        <h3 class="anime-title">Demon Slayer</h3>
+                        <p class="anime-meta">Екшн, Надприродне</p>
+                    </div>
+                </div>
+
+                <div class="anime-card">
+                    <div class="anime-card-image">
+                        <div class="anime-card-placeholder">Poster 3</div>
+                        <span class="rating-badge">3</span>
+                        <div class="views-badge">
+                            <svg width="16" height="16" fill="#00D9C0">
+                                <path d="M8 2C4.5 2 1.5 5 1.5 8s3 6 6.5 6 6.5-3 6.5-6-3-6-6.5-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                            </svg>
+                            <span>156</span>
+                        </div>
+                        <span class="episode-badge">26 ep</span>
+                    </div>
+                    <div class="anime-card-body">
+                        <h3 class="anime-title">Jujutsu Kaisen</h3>
+                        <p class="anime-meta">Екшн, Школа</p>
+                    </div>
+                </div>
+
+                <div class="anime-card">
+                    <div class="anime-card-image">
+                        <div class="anime-card-placeholder">Poster 4</div>
+                        <span class="rating-badge">4</span>
+                        <div class="views-badge">
+                            <svg width="16" height="16" fill="#00D9C0">
+                                <path d="M8 2C4.5 2 1.5 5 1.5 8s3 6 6.5 6 6.5-3 6.5-6-3-6-6.5-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                            </svg>
+                            <span>87</span>
+                        </div>
+                        <span class="episode-badge">13 ep</span>
+                    </div>
+                    <div class="anime-card-body">
+                        <h3 class="anime-title">My Hero Academia</h3>
+                        <p class="anime-meta">Школа, Екшн</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Anime Section -->
+        <section class="content-section">
+            <h2 class="section-title">Популярні аніме</h2>
+            <div class="anime-grid-popular">
+                <div class="popular-anime-card">
+                    <div class="popular-card-image">
+                        <div class="anime-card-placeholder">Popular 1</div>
+                    </div>
+                    <div class="popular-card-content">
+                        <h3 class="popular-title">Steins;Gate</h3>
+                        <p class="popular-description">
+                            Група студентів одного з мікроелектронних лабораторій випадково создают машину для передачи повідомлень в минуле...
+                        </p>
+                        <div class="popular-meta">
+                            <span class="meta-item">24 ep</span>
+                            <span class="meta-item">Драма</span>
+                            <span class="meta-item">2011</span>
+                        </div>
+                        <button class="button-secondary">Детальніше</button>
+                    </div>
+                </div>
+
+                <div class="popular-anime-card">
+                    <div class="popular-card-image">
+                        <div class="anime-card-placeholder">Popular 2</div>
+                    </div>
+                    <div class="popular-card-content">
+                        <h3 class="popular-title">Death Note</h3>
+                        <p class="popular-description">
+                            Студент Лайт Ягамі знаходить зошит для смерті, якому принадлежить божеству смерти Рюку...
+                        </p>
+                        <div class="popular-meta">
+                            <span class="meta-item">37 ep</span>
+                            <span class="meta-item">Психологічний</span>
+                            <span class="meta-item">2006</span>
+                        </div>
+                        <button class="button-secondary">Детальніше</button>
+                    </div>
+                </div>
+
+                <div class="popular-anime-card">
+                    <div class="popular-card-image">
+                        <div class="anime-card-placeholder">Popular 3</div>
+                    </div>
+                    <div class="popular-card-content">
+                        <h3 class="popular-title">Tokyo Ghoul</h3>
+                        <p class="popular-description">
+                            Токійські нічні вулиці стають місцем жахливих зустрічей з надприродними істотами...
+                        </p>
+                        <div class="popular-meta">
+                            <span class="meta-item">48 ep</span>
+                            <span class="meta-item">Екшн</span>
+                            <span class="meta-item">2014</span>
+                        </div>
+                        <button class="button-secondary">Детальніше</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="content-section community-section">
+            <h2 class="section-title">Спільнота</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <h3>Обговорення</h3>
+                    <p>Ділитеся думками та теоріями про улюблене аніме</p>
+                    <button class="button-secondary">Перейти до форуму</button>
+                </div>
+                <div class="community-card">
+                    <h3>Косплей</h3>
+                    <p>Дивіться косплей-фото та відео від учасників спільноти</p>
+                    <button class="button-secondary">Галерея</button>
+                </div>
+                <div class="community-card">
+                    <h3>Манга</h3>
+                    <p>Читайте оригінальні мангу та ознайомлюйтесь з адаптаціями</p>
+                    <button class="button-secondary">Бібліотека</button>
+                </div>
+                <div class="community-card">
+                    <h3>Новини</h3>
+                    <p>Залишайтеся в курсі останніх новин індустрії аніме</p>
+                    <button class="button-secondary">Читати</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Animezilla</h4>
+                <p>Український аніме-хаб для усіх</p>
+            </div>
+            <div class="footer-section">
+                <h4>Навігація</h4>
+                <ul>
+                    <li><a href="#">Каталог</a></li>
+                    <li><a href="#">Топ 100</a></li>
+                    <li><a href="#">Новини</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакти</h4>
+                <p>Email: info@animezilla.ua</p>
+                <p>Social: Telegram, Discord</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Animezilla. Усі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
